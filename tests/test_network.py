@@ -5,6 +5,17 @@ import pytest
 import numpy as np
 from xCCM.modules.network import CCMNetwork
 
+@pytest.fixture
+def sample_ccm_results():
+    """Generate sample CCM results for testing."""
+    return {
+        ('x', 'y'): (0.8, 0.01),
+        ('y', 'z'): (0.6, 0.02),
+        ('z', 'x'): (0.7, 0.03),
+        ('x', 'z'): (0.5, 0.04),
+        ('y', 'x'): (0.4, 0.05)
+    }
+
 def test_network_initialization():
     """Test network initialization."""
     network = CCMNetwork()
