@@ -50,7 +50,7 @@ def test_performance(sample_timeseries):
     ccm = EnhancedCCM(embedding_dimension=3)
     
     # Test parallel computation
-    lib_sizes = np.arange(10, 100, 10)
+    lib_sizes = np.arange(4, 100, 10)  # Adjusted library size
     results = perf.optimize_computation(ccm, x, y, lib_sizes)
     assert len(results) == len(lib_sizes)
     

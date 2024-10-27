@@ -28,6 +28,11 @@ def test_multivariate_ccm(multivariate_timeseries):
     """Test multivariate CCM analysis."""
     mccm = MultivariateCCM(embedding_dimension=3)
     
+    # Ensure time series have the same length
+    min_length = min(len(ts) for ts in multivariate_timeseries.values())
+    for key in multivariate_timeseries:
+        multivariate_timeseries[key] = multivariate_timeseries[key][:min_length]
+    
     results = mccm.run_multivariate_ccm(
         multivariate_timeseries,
         target_var='x',
