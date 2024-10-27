@@ -1,0 +1,41 @@
+# config.yaml
+```yaml
+# Data Configuration
+data:
+  file_path: "data/timeseries.csv"
+  has_header: true  # Set to false if no header row
+  datetime_column: "date"  # Name or index of datetime column (optional)
+  index_column: null  # Name or index of index column (optional)
+  
+  # Specify columns for analysis
+  # If not specified, all numeric columns will be used
+  variables:
+    - name: "temperature"  # Column name or index
+      type: "float"
+      preprocess:
+        - "standardize"
+        - "detrend"
+    - name: "rainfall"
+      type: "float"
+      preprocess:
+        - "standardize"
+    - name: "humidity"
+      type: "float"
+      preprocess:
+        - "standardize"
+
+# Analysis Configuration
+analysis:
+  embedding_dimension: 3
+  tau: 1
+  library_sizes: [10, 500, 50]  # [start, end, step]
+  significance_level: 0.05
+  n_surrogates: 100
+  
+# Output Configuration
+output:
+  results_dir: "results"
+  save_figures: true
+  save_data: true
+  figure_format: "png"
+```
