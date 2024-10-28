@@ -16,13 +16,13 @@ An extended implementation of Convergent Cross Mapping (CCM) building upon the s
 ## Installation
 
 ```bash
-pip install extended-ccm
+pip install xCCM
 ```
 
 ## Quick Start
 
 ```python
-from extended_ccm import EnhancedCCM, CCMVisualizer
+from xCCM import EnhancedCCM, CCMVisualizer
 
 # Initialize CCM
 ccm = EnhancedCCM(embedding_dimension=3)
@@ -45,8 +45,8 @@ To set up the development environment:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/extended-ccm.git
-cd extended-ccm
+git clone https://github.com/SharathSPhD/xCCM.git
+cd xCCM
 
 # Create virtual environment
 python -m venv venv
